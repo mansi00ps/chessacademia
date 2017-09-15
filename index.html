@@ -330,7 +330,7 @@ function showDivs(n) {
      $( "#errormessage" ).text( "Enter fields!" ).show().fadeOut( 1000 );
      return false;
  }
-        if (!pattern.test(email))
+        if (!pattern.test(email) &&  email!=" ")
  {
      $( "#errormessage" ).text( "Not valid!" ).show().fadeOut( 1000 );
  //alert('Email address is invalid');
