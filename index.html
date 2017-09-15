@@ -239,7 +239,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <div class="w3-section">
       <label>Email</label>
       <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Email" id="email" required>
-       <span></span>
+       <span id="errormessage"></span>
     </div>
     <div class="w3-section">
       <label>Subject</label>
@@ -328,7 +328,7 @@ function showDivs(n) {
      
         if (!pattern.test(email))
  {
-     $( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
+     $( "#errormessage" ).text( "Not valid!" ).show().fadeOut( 1000 );
  //alert('Email address is invalid');
  return false;
  }
