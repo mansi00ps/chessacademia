@@ -249,7 +249,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       <label>Message</label>
       <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" id="message" required>
     </div>
-    <button type="submit" class="w3-button w3-block w3-black" id="mail-link" onclick=" return checkform();">Send</button>
+    <button type="submit" class="w3-button w3-block w3-black" id="mail-link" onclick="return checkForm();">Send</button>
   </form>
 
 </div>
@@ -325,7 +325,7 @@ function showDivs(n) {
  email = document.getElementById("email").value;
  subject = document.getElementById("subject").value;       
  message = document.getElementById("message").value;
- if(name == " "||email == " " || subject == " "|| message == " " ) 
+ if(name == " " ||email == " " || subject == " " || message == " " ) 
  {
      $( "#errormessage" ).text( "Enter fields!" ).show().fadeOut( 1000 );
      return false;
