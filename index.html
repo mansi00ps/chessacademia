@@ -244,7 +244,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
       <label>Message</label>
       <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="Message" id="message" required>
     </div>
-    <button type="submit" class="w3-button w3-block w3-black">Send</button>
+    <button type="submit" class="w3-button w3-block w3-black" id="mail-link">Send</button>
   </form>
 
 </div>
@@ -312,6 +312,17 @@ function showDivs(n) {
  }
  return true;
 }
+    
+    function loadEvents() {
+        var mailString;
+        function updateMailString() {
+            mailString = '?subject=' + encodeURIComponent($('#subject').val())
+                + '&body=' + encodeURIComponent($('#message').val());
+            $('#mail-link').attr('href',  'mailto:contact@chessacademia.com' + mailString);
+        }
+        $( "#subject" ).focusout(function() { updateMailString(); });
+        $( "#message" ).focusout(function() { updateMailString(); });
+        updateMailString();
 </script>
 
 </body>
