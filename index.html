@@ -3,12 +3,14 @@
 var host = "www.chessacademia.com";
 if ((host == window.location.host) && (window.location.protocol != "https:"))
     window.location.protocol = "https";
+    
 </script>
 <!DOCTYPE html>
 <html>
   <title>Chess Academia</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
 <link rel="stylesheet" href= "/style.css"><!--"https://www.w3schools.com/w3css/4/w3.css">-->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -229,7 +231,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
   </div>
 
   
-  <form class="w3-container"  action="/action_page.php" target="_blank">
+  <form class="w3-container"  action="/action_page.php" target="_blank" id="contactform">
     <div class="w3-section">
       <label>Name</label>
       <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Name" id="name" required>
@@ -237,6 +239,7 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <div class="w3-section">
       <label>Email</label>
       <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Email" id="email" required>
+       <span></span>
     </div>
     <div class="w3-section">
       <label>Subject</label>
@@ -297,12 +300,26 @@ function showDivs(n) {
   dots[slideIndex-1].className += " w3-white";
 }
     
-  /*   function checkEmail(inputvalue) {
+    //email validation
+   $( "#contactform" ).submit(function( event ) {
+       email = document.getElementById("email").value;
+       if checkEmail(email)==true;
+   {
+    
+    return;
+  }
+ else{
+  $( "span" ).text( "Not valid!" ).show().fadeOut( 1000 );
+  event.preventDefault();
+ }
+});
+    
+     function checkEmail(inputvalue) {
  var pattern = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
  return pattern.test(inputvalue);
 }
     
-    function checkForm() {
+  /*  function checkForm() {
  name = document.getElementById("name").value;
  email = document.getElementById("email").value;
  subject = document.getElementById("subject").value;       
