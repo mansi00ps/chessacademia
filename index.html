@@ -227,7 +227,8 @@ html,body,h1,h2,h3,h4 {font-family:"Lato", sans-serif}
     <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
   </div>
 
-  <form class="w3-container" >
+  
+  <form class="w3-container" action="/action_page.php" target="_blank">
     <div class="w3-section">
       <label>Name</label>
       <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="Name" id="name" required>
@@ -295,7 +296,7 @@ function showDivs(n) {
   dots[slideIndex-1].className += " w3-white";
 }
     
-    function checkEmail(inputvalue) {
+  /*   function checkEmail(inputvalue) {
  var pattern = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
  return pattern.test(inputvalue);
 }
@@ -313,7 +314,7 @@ function showDivs(n) {
  return true;
 }
     
-    function loadEvents() {
+   function loadEvents() {
         var mailString;
         function updateMailString() {
             mailString = '?subject=' + encodeURIComponent($('#subject').val())
@@ -322,7 +323,7 @@ function showDivs(n) {
         }
         $( "#subject" ).focusout(function() { updateMailString(); });
         $( "#message" ).focusout(function() { updateMailString(); });
-        updateMailString();
+        updateMailString();*/
 </script>
 
 </body>
