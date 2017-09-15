@@ -325,12 +325,12 @@ function showDivs(n) {
  email = document.getElementById("email").value;
  subject = document.getElementById("subject").value;       
  message = document.getElementById("message").value;
- if(name == " " ||email == " " || subject == " " || message == " " ) 
- {
+ if(name==""||name==null ||email==""||email==null||subject==""||subject==null||message==""||message==null) 
+  {
      $( "#errormessage" ).text( "Enter fields!" ).show().fadeOut( 1000 );
      return false;
  }
-        if (!pattern.test(email) &&  email!=" ")
+        if (!pattern.test(email) &&  (email!="" || email!=null))
  {
      $( "#errormessage" ).text( "Not valid!" ).show().fadeOut( 1000 );
  //alert('Email address is invalid');
